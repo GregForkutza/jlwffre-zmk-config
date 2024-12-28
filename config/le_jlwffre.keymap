@@ -44,24 +44,29 @@
         combos {
             compatible = "zmk,combos";
             combo_esc {
-                timeout-ms = <50>;
+                timeout-ms = <40>;
                 key-positions = <0 1>;
                 bindings = <&kp ESC>;
             };
             combo_del {
-                timeout-ms = <50>;
+                timeout-ms = <40>;
                 key-positions = <7 8>;
                 bindings = <&kp DEL>;
             };
 	    combo_F3 {
-		timeout-ms = <50>;
+		timeout-ms = <40>;
 		key-positions = <2 3>;
 		bindings = <&kp F3>;
 	    };
 	    combo_enter {
-		timeout-ms = <50>;
+		timeout-ms = <40>;
 		key-positions = <6 7>; 	
 		bindings = <&kp ENTER>;
+	    };
+	    combo_l3 {
+		timeout-ms = <50>;
+		key-positions = <20 21>;
+		bindings = <&mo 3>;
 	    };
             combo_reset {
                 timeout-ms = <50>;
@@ -117,7 +122,7 @@
         //│  Z       │  X       │  M       │  C       │  V       │                      │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp M      &kp C      &kp V                             &kp K      &kp L      &as COMMA  &as DOT    &as FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤                      ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &mt LGUI TAB  &lt 1 BSPC                     &lt 1 SPACE &mt RGUI RET
+                                            &mt LGUI TAB  &lt 1 BSPC    &none           &lt 1 SPACE &mt RGUI RET
         //                                 ╰──────────┴──────────╯                      ╰──────────┴──────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -151,7 +156,7 @@
    &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_DOWN &mmv MOVE_RIGHT	&mkp RCLK  &msc SCRL_DOWN &kp LPAR &kp RPAR   &none    &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │      │          │          │          │          │          │
-            &none      &none      &none      &none      &none             &none      &as EQUAL  &as MINUS   &none      &none
+            &none      &none      &none      &none      &none             &as MINUS  &as EQUAL  &trans     &trans      &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans    &trans  &trans     &trans
         //                                 ╰──────────┴──────────╯      ╰──────────┴──────────╯
@@ -162,14 +167,14 @@
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮      ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │      │  HOME    │          │  UP      │          │  PG_UP   │
-            &none      &none  &kp LS(LG(N4)) &kp LS(LG(S)) &none         &kp HOME   &none      &kp UP     &none      &kp PG_UP
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  LGUI    │  LALT    │  LCTRL   │          │          │      │  END     │  LEFT    │  DOWN    │  RIGHT   │  PG_DN   │
-            &kp LGUI   &kp LALT   &kp LCTRL  &none      &none             &kp END    &kp LEFT   &kp DOWN  &kp RIGHT  &kp PG_DN
+        //│          │          │          │          │          │      │          │          │          │          │          │
+            &none      &none      &none       &none       &none          &kp none     &none      &none       &none      &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │      │          │          │          │          │          │
-            &none      &none      &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP    &none      &none      &none      &none      &none
+            &kp F1      &kp F2      &kp F3     &kp F4    &kp F5           &kp F6     &kp F7	 &kp F8     &kp F9     &kp F10
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │      │          │          │          │          │          │
+            &none      &none      &none        &none      &none            &none      &none      &none      &kp F11     &kp F12
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans    &trans  &trans     &trans
         //                                 ╰──────────┴──────────╯      ╰──────────┴──────────╯
