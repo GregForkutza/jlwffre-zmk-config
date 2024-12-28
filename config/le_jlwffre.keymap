@@ -138,7 +138,7 @@
             &as N0     &as N4       &as N5     &as N6   &as GRAVE       &kp C_VOL_DN  &kp LEFT  &kp DOWN   &kp RIGHT  &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  1!      │   2@     │    3#    │          │      │          │          │          │          │          │
-            &none      &as N1      &as N2      &as N3   &none           &kp C_PP      &none     &trans     &trans     &trans
+            &none      &as N1      &as N2      &as N3   &none           &kp C_PP     &as SEMI    &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤      ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans    &trans  &trans     &trans
         //                                 ╰──────────┴──────────╯      ╰──────────┴──────────╯
